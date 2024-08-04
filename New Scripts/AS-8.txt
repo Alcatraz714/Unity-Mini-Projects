@@ -1,0 +1,26 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter a positive integer n: ";
+    cin >> n;
+
+    // Validate that n is a positive integer
+    if (n <= 0) {
+        cout << "Enter a positive integer, run the program again please" << endl;
+        return 1; // Exit and show error code
+    }
+
+    // Calculate the sum of the first 'n' natural numbers
+    int sum = 0;
+    for (int i = 1; i <= n; ++i) {
+        sum += i;
+    }
+
+    // Output
+    cout << "Sum of first " << n << " natural numbers is: " << sum << endl;
+
+    return 0;
+}

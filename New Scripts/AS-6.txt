@@ -1,0 +1,76 @@
+#include <iostream>
+
+using namespace std;
+
+class Player {
+private:
+    int health;
+    int attack;
+    int defense;
+    int healingPower;
+
+public:
+    // Constructor to initialize
+    Player(int h, int a, int d, int hp) {
+        health = h;
+        attack = a;
+        defense = d;
+        healingPower = hp;
+    }
+
+    void TakeDamage(int damageToInflict) {
+        // Reduce health by damageToInflict
+        health -= damageToInflict;
+
+        // Ensure health does not go below 0
+        if (health < 0) {
+            health = 0;
+        }
+
+        cout << "Player takes " << damageToInflict << " damage." << endl;
+        cout << "Player health remaining: " << health << endl;
+    }
+
+    void Heal(int healthToRecover) {
+        // Increase health by healthToRecover
+        health += healthToRecover;
+
+        cout << "Player heals for " << healthToRecover << " health points." << endl;
+        cout << "Player health remaining: " << health << endl;
+    }
+
+    void DamageMultiplier(double multiplier) {
+        // Multiply attack by the multiplier
+        attack *= multiplier;
+
+        cout << "Player's attack is multiplied by " << multiplier << "." << endl;
+        cout << "Player's attack power: " << attack << endl;
+    }
+
+    void DisplayInitialValues() {
+        cout << "Player's Initial Values:" << endl;
+        cout << "Health: " << health << endl;
+        cout << "Attack: " << attack << endl;
+        cout << "Defense: " << defense << endl;
+        cout << "Healing Power: " << healingPower << endl;
+    }
+};
+
+int main() {
+    Player player(100, 20, 10, 5);
+
+    // Display initial values
+    player.DisplayInitialValues();
+    cout << endl;
+
+    // Demonstrate TakeDamage method
+    player.TakeDamage(30);  // Player takes 30 damage
+
+    // Demonstrate Heal method
+    player.Heal(15);  // Player heals for 15 health points
+
+    // Demonstrate DamageMultiplier method
+    player.DamageMultiplier(1.5);  // Player's attack is multiplied by 1.5
+
+    return 0;
+}

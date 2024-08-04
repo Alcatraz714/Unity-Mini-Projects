@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+void shooting() {
+    cout << "Player is shooting" << endl;
+}
+
+void healing() {
+    cout << "Player is healing" << endl;
+}
+
+void attacking() {
+    cout << "Player is attacking" << endl;
+}
+
+int main() {
+    // For loop running 10 times calling shooting()
+    cout << "Executing for loop calling shooting() 10 times:" << endl;
+    for (int i = 0; i < 10; ++i) {
+        shooting();
+    }
+
+    cout << endl;
+
+    // While loop running 5 times calling healing()
+    cout << "Executing while loop calling healing() 5 times:" << endl;
+    int counter = 0;
+    while (counter < 5) {
+        healing();
+        ++counter;
+    }
+
+    cout << endl;
+
+    // Do-while loop running 7 times calling attacking()
+    cout << "Executing do-while loop calling attacking() 7 times:" << endl;
+    int doCounter = 0;
+    do {
+        attacking();
+        ++doCounter;
+    } while (doCounter < 7);
+
+    return 0;
+}

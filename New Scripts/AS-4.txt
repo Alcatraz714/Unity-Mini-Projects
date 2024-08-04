@@ -1,0 +1,49 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    // Input player and enemy health from console
+    int player_health, enemy_health;
+    cout << "Enter player's health: ";
+    cin >> player_health;
+    cout << "Enter enemy's health: ";
+    cin >> enemy_health;
+
+    // Check player's health conditions
+    if (player_health > 0) {
+        if (player_health == 100) {
+            cout << "Player's health is full" << endl;
+        } else if (player_health >= 50) {
+            cout << "Player's health is above half" << endl;
+        } else {
+            cout << "Player's health is below half but not zero" << endl;
+        }
+    } else {
+        cout << "Player's health is zero (death condition)" << endl;
+    }
+
+    // Check enemy's health conditions
+    if (enemy_health > 0) {
+        if (enemy_health == 100) {
+            cout << "Enemy's health is full" << endl;
+        } else if (enemy_health >= 50) {
+            cout << "Enemy's health is above half" << endl;
+        } else {
+            cout << "Enemy's health is below half but not zero" << endl;
+        }
+    } else {
+        cout << "Enemy's health is zero (death condition)" << endl;
+    }
+
+    // Determine game outcome
+    if (player_health <= 0 && enemy_health <= 0) {
+        cout << "Game over: It's a draw!" << endl;
+    } else if (player_health <= 0) {
+        cout << "Game over: Player lost!" << endl;
+    } else if (enemy_health <= 0) {
+        cout << "Game over: Player won!" << endl;
+    }
+
+    return 0;
+}

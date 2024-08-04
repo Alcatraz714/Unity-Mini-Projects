@@ -1,0 +1,88 @@
+#include <iostream>
+using namespace std;
+class Player 
+{
+    private:
+        int health =100;
+        
+        int maxAttack = 40;
+        int minAttack = 20;
+        
+        int maxHeal = 10;
+        int minHeal = 15;
+    
+    public:
+        Player() 
+        {
+            cout << "\n<------------------------------------>\n";
+            cout << "\nSummoned Player use your powers to slay dragons and find the Dragon's Bane...";
+            cout << "\nYou have gained power since coming here but you need to get stronger..";
+            cout << "\nYou have the makings of the Dragonborn who wielded the Dragon's Bane.\n";
+            cout << "\nHere are your stats and powers:\n";
+            cout << "Health: " << health << "\n";
+            cout << "Attack Power Range: " << minAttack <<"-"<< maxAttack <<".\n";
+            cout << "Healing Range: " << minHeal <<"-"<< maxHeal <<".\n";
+            cout << "\n<------------------------------------>\n";
+        }
+        
+        int GetHealth()
+        {
+            return health;
+        }
+        void TakeDamage(int Damage)
+        {
+            if(health>0)
+            {
+                cout << "Hit by an enemy, dealt "<<Damage<<" on critical hit\n";
+                health = health - Damage;
+                cout << "Player health is:"<<health<<endl;
+            }
+            else
+            {
+                cout << "\nYou died after taking too much damage\n";
+            }
+        }
+        void GiveDamage()
+        {
+            
+        }
+        void Heal()
+        {
+            
+        }
+};
+
+void gameStory() 
+{
+    cout << "<------------------------------------>\n";
+    cout << "\nWelcome to the Dragon's Age\n";
+    cout << "\n<------------------------------------>\n";
+    cout << "\nYou find yourself in a mystical realm filled with dragons and treasures.\n";
+    cout << "Your mission is to find the legendary sword of power!\n";
+    cout << "But beware, dangers lurk around every corner, defeat the dragon lord and save the world..\n";
+    cout << "\n<------------------------------------>\n";
+}
+
+int main() 
+{
+    gameStory();
+    char uInput;
+    do
+    {
+        cout << "\nPress S to start and other key to exit\n";
+        cin >> uInput;
+        
+        if(uInput == 'S' || uInput == 's')
+        {
+            Player player1; //object made called player1
+        }
+        else
+        {
+            cout << "\nThanks for playing Dragon's Age\n";
+        }
+        
+    }
+    while(uInput == 'S' || uInput == 's');
+    
+    return 0;
+}
